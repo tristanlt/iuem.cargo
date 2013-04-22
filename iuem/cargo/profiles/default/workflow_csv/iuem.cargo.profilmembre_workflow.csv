@@ -1,0 +1,17 @@
+[Workflow]
+Id:,iuem.cargo.profilmembre_workflow
+Title:,Workflow de profil membre
+Description:,Etat unique publie pour les membres
+Initial state:,cargo
+Type:,Workflow
+State variable:,review_state
+
+[State]
+Id:,cargo
+Title:,Interne Cargo
+Description:,"Visible to members, editable by the owner."
+Transitions,
+Permissions,Acquire,Anonymous,Manager,Owner,Reader,Editor,Contributor,Member,Site Administrator
+Access contents information,N,N,Y,Y,N,Y,N,Y,Y
+View,N,N,Y,Y,N,N,N,Y,Y
+Modify portal content,N,N,Y,Y,N,Y,N,N,Y

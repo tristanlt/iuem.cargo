@@ -12,4 +12,5 @@ iuem.cargo.egg-info/paster_plugins.txt
 iuem.cargo.egg-info/requires.txt
 iuem.cargo.egg-info/top_level.txt
 iuem/cargo/__init__.py
+iuem/cargo/profilmembre.py
 iuem/cargo/tests.py

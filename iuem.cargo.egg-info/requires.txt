@@ -1,1 +1,7 @@
 setuptools
+Plone
+plone.app.dexterity
+collective.autopermission
+collective.geo.behaviour
+collective.geo.geographer
+collective.wtf

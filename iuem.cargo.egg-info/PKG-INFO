@@ -3,8 +3,8 @@ Name: iuem.cargo
 Version: 1.0
 Summary: Configuration specific pour Cargo
 Home-page: http://svn.plone.org/svn/collective/
-Author: UNKNOWN
-Author-email: UNKNOWN
+Author: Tristan Le Toullec
+Author-email: tristan.letoullec@univ-brest.fr
 License: GPL
 Description: Introduction
         ============
