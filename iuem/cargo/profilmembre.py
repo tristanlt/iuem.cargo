@@ -12,10 +12,9 @@ from iuem.cargo import _
 class IProfilMembre(form.Schema):
     """Un profil de membre cargo
     """
-    nomprenom = schema.TextLine(
-            title=_(u"Nom Prénom"),
-            required=False
-        )
+    title = schema.TextLine(
+            title=_(u"Nom prénom"),
+         )
     description = schema.TextLine(
             title=_(u"Description"),
             description=_(u"Rapide description..."),
