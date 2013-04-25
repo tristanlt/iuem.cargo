@@ -26,10 +26,11 @@ setup(name='iuem.cargo',
       install_requires=[
           'setuptools',
           'Plone',
-          'plone.app.dexterity [grok]',
+          'plone.app.dexterity',
           'collective.autopermission',
           'collective.geo.bundle',
           'collective.wtf',
+          'collective.geo.behaviour'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
