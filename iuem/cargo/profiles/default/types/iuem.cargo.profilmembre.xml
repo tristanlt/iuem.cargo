@@ -25,6 +25,7 @@
      <element value="plone.app.content.interfaces.INameFromTitle" />
 <!--      <element value="plone.app.dexterity.behaviors.metadata.IBasic" /> -->
      <element value="collective.geo.behaviour.interfaces.ICoordinates" />
+     <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
  </property>
 
  <!-- View information -->

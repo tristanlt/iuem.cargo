@@ -12,10 +12,19 @@ from iuem.cargo import _
 from AccessControl import getSecurityManager
 from Products.CMFCore.utils import getToolByName
 
+from collective import dexteritytextindexer
+from plone.autoform.interfaces import IFormFieldProvider
+from zope.interface import alsoProvides
+
 class IProfilMembre(form.Schema):
     """Un profil de membre cargo
     """
     title = schema.TextLine(
+            title=_(u"eppn"),
+            
+         )
+    form.mode(title='hidden')
+    displayname = schema.TextLine(
             title=_(u"Nom prénom"),
          )
     description = schema.TextLine(

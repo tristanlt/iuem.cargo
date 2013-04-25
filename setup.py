@@ -30,7 +30,8 @@ setup(name='iuem.cargo',
           'collective.autopermission',
           'collective.geo.bundle',
           'collective.wtf',
-          'collective.geo.behaviour'
+          'collective.geo.behaviour',
+          'collective.dexteritytextindexer'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
