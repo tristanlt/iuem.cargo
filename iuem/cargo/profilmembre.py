@@ -9,6 +9,9 @@ from plone.namedfile.field import NamedImage
 
 from iuem.cargo import _
 
+from AccessControl import getSecurityManager
+from Products.CMFCore.utils import getToolByName
+
 class IProfilMembre(form.Schema):
     """Un profil de membre cargo
     """
@@ -79,7 +82,36 @@ class IProfilMembre(form.Schema):
             title=_(u"Responsable de service"),
             required=False
         )
-    
+
+@form.default_value(field=IProfilMembre['title'])
+def default_title(data):
+    membership = getToolByName(data.context, 'portal_membership')
+    user = getSecurityManager().getUser()
+    leuser=membership.getMemberById(user.getUserName())
+    return leuser.getProperty('id')
+
+@form.default_value(field=IProfilMembre['description'])
+def default_description(data):
+    membership = getToolByName(data.context, 'portal_membership')
+    user = getSecurityManager().getUser()
+    leuser=membership.getMemberById(user.getUserName())
+    return leuser.getProperty('fullname')
+
+@form.default_value(field=IProfilMembre['mail'])
+def default_mail(data):
+    membership = getToolByName(data.context, 'portal_membership')
+    user = getSecurityManager().getUser()
+    leuser=membership.getMemberById(user.getUserName())
+    return leuser.getProperty('email')
+
+@form.default_value(field=IProfilMembre['organisme'])
+def default_organisme(data):
+    return data.request.getHeader('X_SUPANN-ETABLISSEMENT')
+
+@form.default_value(field=IProfilMembre['telephone'])
+def default_telephone(data):
+    return data.request.getHeader('X_TELEPHONENUMBER')
+
 class View(grok.View):
     grok.context(IProfilMembre)
     grok.require('zope2.View')
