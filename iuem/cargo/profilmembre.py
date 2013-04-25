@@ -109,8 +109,8 @@ def default_title(data):
     leuser=membership.getMemberById(user.getUserName())
     return leuser.getProperty('id')
 
-@form.default_value(field=IProfilMembre['description'])
-def default_description(data):
+@form.default_value(field=IProfilMembre['displayname'])
+def default_displayname(data):
     membership = getToolByName(data.context, 'portal_membership')
     user = getSecurityManager().getUser()
     leuser=membership.getMemberById(user.getUserName())
