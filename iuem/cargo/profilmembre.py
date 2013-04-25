@@ -24,9 +24,11 @@ class IProfilMembre(form.Schema):
             
          )
     form.mode(title='hidden')
+    dexteritytextindexer.searchable('displayname')
     displayname = schema.TextLine(
             title=_(u"Nom prénom"),
          )
+    dexteritytextindexer.searchable('description')
     description = schema.TextLine(
             title=_(u"Description"),
             description=_(u"Rapide description..."),
@@ -37,10 +39,12 @@ class IProfilMembre(form.Schema):
             description=_(u"Adresse mail"),
             required=False
         )
+    dexteritytextindexer.searchable('unite')
     unite = schema.TextLine(
             title=_(u"Unité"),
             required=False
         )
+    dexteritytextindexer.searchable('organisme')
     organisme = schema.TextLine(
             title=_(u"Organisme"),
             description=_(u"CNRS, université..."),
@@ -54,16 +58,19 @@ class IProfilMembre(form.Schema):
             title=_(u"Téléphone"),
             required=False
         )
+    dexteritytextindexer.searchable('competences')
     competences = RichText(
             title=_(u"Compétences"),
             description=_(u"Domaine d'expertise (liste non-exhaustive)"),
             required=False
         )
+    dexteritytextindexer.searchable('projets')
     projets = RichText(
             title=_(u"Projets"),
             description=_(u"Projets passés ou en cours..."),
             required=False
         )
+    dexteritytextindexer.searchable('attentes_de_formations')
     attentes_de_formations = RichText(
             title=_(u"Attentes de formation"),
             description=_(u"Les formations qui pourraient vous être utiles."),
@@ -91,6 +98,8 @@ class IProfilMembre(form.Schema):
             title=_(u"Responsable de service"),
             required=False
         )
+
+alsoProvides(IProfilMembre, IFormFieldProvider)
 
 @form.default_value(field=IProfilMembre['title'])
 def default_title(data):
