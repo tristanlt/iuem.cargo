@@ -21,17 +21,17 @@ class IProfilMembre(form.Schema):
     """
     title = schema.TextLine(
             title=_(u"eppn"),
-            
          )
     form.mode(title='hidden')
     dexteritytextindexer.searchable('displayname')
     displayname = schema.TextLine(
             title=_(u"Nom prénom"),
          )
+    form.mode(displayname='hidden')
     dexteritytextindexer.searchable('description')
-    description = schema.TextLine(
+    description = schema.Text(
             title=_(u"Description"),
-            description=_(u"Rapide description..."),
+            description=_(u"Une rapide description..."),
             required=False
         )
     mail = schema.TextLine(
@@ -39,6 +39,7 @@ class IProfilMembre(form.Schema):
             description=_(u"Adresse mail"),
             required=False
         )
+    form.mode(mail='hidden')
     dexteritytextindexer.searchable('unite')
     unite = schema.TextLine(
             title=_(u"Unité"),
