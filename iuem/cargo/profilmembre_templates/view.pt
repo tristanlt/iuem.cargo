@@ -21,7 +21,7 @@
     </div>
     <div style="display: inline-block; width: 55%; padding: 2em;">
 
-     <h1 tal:condition="here/title" tal:content="here/title">We are here !</h1>
+     <h1 tal:condition="here/title" tal:content="here/displayname">We are here !</h1>
 
      <h2 tal:condition="here/description"  tal:content="here/description">We are here !</h2>
 

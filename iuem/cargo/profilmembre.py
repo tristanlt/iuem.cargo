@@ -31,7 +31,7 @@ class IProfilMembre(form.Schema):
     dexteritytextindexer.searchable('description')
     description = schema.Text(
             title=_(u"Description"),
-            description=_(u"Une rapide description..."),
+            description=_(u"Courte biographie..."),
             required=False
         )
     mail = schema.TextLine(
@@ -78,8 +78,8 @@ class IProfilMembre(form.Schema):
             required=False
         )
     portrait = NamedImage(
-            title=_(u"Portrait"),
-            description=_(u"Votre portrait"),
+            title=_(u"Photo"),
+            description=_(u"Une photo de vous"),
             required=False,
         )
     logo = NamedImage(
@@ -88,11 +88,11 @@ class IProfilMembre(form.Schema):
             required=False,
         )
     nb_service = schema.Int(
-            title=_(u"Nombre de personne dans votre service."),
+            title=_(u"Nombre de personne dans votre service"),
             required=False
         )
     nb_asr = schema.Int(
-            title=_(u"Nombre d'ASR dans votre service."),
+            title=_(u"Nombre d'administrateur systèmes et réseaux dans votre service"),
             required=False
         )
     responsable_de_service = schema.TextLine(
